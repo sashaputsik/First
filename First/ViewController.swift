@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var birthdatePicker: UIDatePicker!
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        
+        print("save")
         let birthdate = birthdatePicker.date
         let firstName = firstNameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
