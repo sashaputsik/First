@@ -1,6 +1,10 @@
 import Foundation
+import CoreData
 import UserNotifications
 import UIKit
+
+
+var birthdays = [BirthdayCore]()
 
 class Birthday{
     
@@ -32,6 +36,35 @@ class Birthday{
             try context.save()
         } catch let error as NSError {
             errorCompletionHandler(error)
+        }
+    }
+    func removeBirthday(indexPath: IndexPath, tableView: UITableView){
+        let birthday = birthdays[indexPath.row]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        context.delete(birthday)
+        birthdays.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
+        if let id = birthday.birthdayId{
+          let center = UNUserNotificationCenter.current()
+          center.removePendingNotificationRequests(withIdentifiers: [id])
+        }
+        do {
+          try context.save()
+        } catch let error as NSError {
+          print(error)
+        }
+    }
+    func fetchBirthdayRequest(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let sort = NSSortDescriptor(key: "birthdayDate", ascending: true)
+        let fetch = BirthdayCore.fetchRequest() as NSFetchRequest<BirthdayCore>
+        fetch.sortDescriptors = [sort]
+        do {
+          birthdays = try context.fetch(fetch)
+        } catch let error as NSError {
+          print(error)
         }
     }
 }
