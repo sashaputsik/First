@@ -1,18 +1,16 @@
-import CoreData
 import Foundation
-import NotificationCenter
+import UserNotifications
+import UIKit
 
-extension AddedViewController{
-    func saveToDate(){
-        let birthdate = birthdatePicker.date
-        let firstName = firstNameTextField.text ?? ""
-        let lastName = lastNameTextField.text ?? ""
+class Birthday{
+    
+    func saveBirthaday(of date: Date, firstName: String, lastName: String, errorCompletionHandler: ((NSError)->()?)){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let newBirthday = BirthdayCore(context: context)
         newBirthday.firstName = firstName
         newBirthday.lastName = lastName
-        newBirthday.birthdayDate = birthdate
+        newBirthday.birthdayDate = date
         newBirthday.birthdayId = UUID().uuidString
         
         let massage = "Today \(firstName) \(lastName) present her HB "
@@ -20,7 +18,7 @@ extension AddedViewController{
         content.body = massage
         content.sound = .default
     
-        var dateComponents = Calendar.current.dateComponents([.month, .day], from: birthdate)
+        var dateComponents = Calendar.current.dateComponents([.month, .day], from: date)
         dateComponents.hour = 17
         dateComponents.minute = 00
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
@@ -33,10 +31,7 @@ extension AddedViewController{
         do {
             try context.save()
         } catch let error as NSError {
-            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .actionSheet)
-            let okeyAction = UIAlertAction(title: "Okey", style: .default, handler: nil)
-            alertController.addAction(okeyAction)
-            present(alertController, animated: true, completion: nil)
+            errorCompletionHandler(error)
         }
     }
 }
