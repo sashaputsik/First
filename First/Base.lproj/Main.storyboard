@@ -143,6 +143,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="adm-EV-p7F">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="calendar" catalog="system" id="9OP-gh-xFJ">
+                            <color key="tintColor" red="0.90912467239999994" green="0.92925274369999999" blue="0.94584649799999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="iq1-pE-Yzv" kind="show" id="laC-gR-m2f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6uE-wR-e0x">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -155,27 +161,76 @@
             </objects>
             <point key="canvasLocation" x="945" y="104"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar View Controller-->
         <scene sceneID="yoH-sY-hH9">
             <objects>
-                <viewController id="iq1-pE-Yzv" sceneMemberID="viewController">
+                <viewController id="iq1-pE-Yzv" customClass="CalendarViewController" customModule="First" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S2x-8E-9i3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPO-sj-a52" customClass="FSCalendar">
-                                <rect key="frame" x="67" y="69" width="240" height="339"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPO-sj-a52" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="96" width="375" height="342.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="События" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPb-fM-e2e">
+                                <rect key="frame" x="16" y="446.5" width="247" height="34.5"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ut-f9-Gsk">
+                                <rect key="frame" x="16" y="489" width="247" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e31-aj-L2x">
+                                <rect key="frame" x="16" y="518" width="259" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RPb-fM-e2e" firstAttribute="top" secondItem="XPO-sj-a52" secondAttribute="bottom" constant="8" id="0eS-Yh-PGc"/>
+                            <constraint firstItem="XPO-sj-a52" firstAttribute="trailing" secondItem="C2p-qd-BUu" secondAttribute="trailing" id="D9c-f4-iiV"/>
+                            <constraint firstItem="C2p-qd-BUu" firstAttribute="trailing" secondItem="e31-aj-L2x" secondAttribute="trailing" constant="100" id="Mwy-pS-pJe"/>
+                            <constraint firstItem="C2p-qd-BUu" firstAttribute="trailing" secondItem="3Ut-f9-Gsk" secondAttribute="trailing" constant="112" id="NZJ-cF-9q0"/>
+                            <constraint firstItem="C2p-qd-BUu" firstAttribute="trailing" secondItem="RPb-fM-e2e" secondAttribute="trailing" constant="112" id="ShA-B7-5gU"/>
+                            <constraint firstItem="C2p-qd-BUu" firstAttribute="bottom" secondItem="e31-aj-L2x" secondAttribute="bottom" constant="128" id="UyK-nB-DFv"/>
+                            <constraint firstItem="e31-aj-L2x" firstAttribute="top" secondItem="3Ut-f9-Gsk" secondAttribute="bottom" constant="8" id="Vdt-DR-8M9"/>
+                            <constraint firstItem="e31-aj-L2x" firstAttribute="leading" secondItem="C2p-qd-BUu" secondAttribute="leading" constant="16" id="YJh-uz-HkP"/>
+                            <constraint firstItem="XPO-sj-a52" firstAttribute="top" secondItem="C2p-qd-BUu" secondAttribute="top" id="dgg-rf-aHR"/>
+                            <constraint firstItem="XPO-sj-a52" firstAttribute="leading" secondItem="C2p-qd-BUu" secondAttribute="leading" id="gnR-GT-jM3"/>
+                            <constraint firstItem="3Ut-f9-Gsk" firstAttribute="top" secondItem="RPb-fM-e2e" secondAttribute="bottom" constant="8" id="pFi-tq-vvC"/>
+                            <constraint firstItem="3Ut-f9-Gsk" firstAttribute="leading" secondItem="C2p-qd-BUu" secondAttribute="leading" constant="16" id="puT-xB-wUE"/>
+                            <constraint firstItem="RPb-fM-e2e" firstAttribute="leading" secondItem="C2p-qd-BUu" secondAttribute="leading" constant="16" id="tQZ-Zx-z3B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C2p-qd-BUu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ad0-wX-9EJ"/>
+                    <connections>
+                        <outlet property="calendarView" destination="XPO-sj-a52" id="dQn-OI-mN6"/>
+                        <outlet property="dateLabel" destination="e31-aj-L2x" id="hUa-fo-vlU"/>
+                        <outlet property="nameLabel" destination="3Ut-f9-Gsk" id="NIG-AS-fQf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcs-WB-8Da" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.20000000000005" y="838.83058470764627"/>
+            <point key="canvasLocation" x="944.79999999999995" y="768.66566716641682"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vEp-Ey-bGo">
@@ -203,4 +258,7 @@
             <point key="canvasLocation" x="132" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+    </resources>
 </document>

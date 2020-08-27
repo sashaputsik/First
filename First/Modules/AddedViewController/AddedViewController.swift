@@ -12,7 +12,7 @@ class AddedViewController: UIViewController {
         super.viewDidLoad()
         firstNameTextField.delegate = self
         lastNameTextField.delegate  = self
-        birthdatePicker.maximumDate = Date()
+      //  birthdatePicker.maximumDate = Date()
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
@@ -36,3 +36,4 @@ extension AddedViewController{
         
     }
 }
+
