@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		4F06CE0BA65A9E8A37B0B249 /* Pods_First.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5813241CD28A7EB6F628715 /* Pods_First.framework */; };
 		9F46BB5124F5B37500D8AB93 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB5024F5B37500D8AB93 /* Model.swift */; };
-		9F46BB5924F83A8300D8AB93 /* TableVIewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB5824F83A8300D8AB93 /* TableVIewDelegate.swift */; };
 		9F46BB5B24F83AD100D8AB93 /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB5A24F83AD100D8AB93 /* CalendarDelegate.swift */; };
+		9F46BB6024FBDBA200D8AB93 /* BirthdaysInDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB5F24FBDBA200D8AB93 /* BirthdaysInDateViewController.swift */; };
+		9F46BB6324FC04DF00D8AB93 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB6224FC04DF00D8AB93 /* TableViewDelegate.swift */; };
 		9FAEAE7C24D1A4430069A666 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEAE7B24D1A4430069A666 /* TextFieldDelegate.swift */; };
 		9FE1A78823C66C13008C9BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1A78723C66C13008C9BCA /* AppDelegate.swift */; };
 		9FE1A78A23C66C13008C9BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1A78923C66C13008C9BCA /* SceneDelegate.swift */; };
@@ -25,8 +26,9 @@
 /* Begin PBXFileReference section */
 		6F25525293ED9BCFF073BDF3 /* Pods-First.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First.release.xcconfig"; path = "Target Support Files/Pods-First/Pods-First.release.xcconfig"; sourceTree = "<group>"; };
 		9F46BB5024F5B37500D8AB93 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		9F46BB5824F83A8300D8AB93 /* TableVIewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVIewDelegate.swift; sourceTree = "<group>"; };
 		9F46BB5A24F83AD100D8AB93 /* CalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDelegate.swift; sourceTree = "<group>"; };
+		9F46BB5F24FBDBA200D8AB93 /* BirthdaysInDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysInDateViewController.swift; sourceTree = "<group>"; };
+		9F46BB6224FC04DF00D8AB93 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		9FAEAE7B24D1A4430069A666 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		9FE1A78423C66C13008C9BCA /* First.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE1A78723C66C13008C9BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,16 +84,32 @@
 		9F46BB5724F83A7100D8AB93 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9F46BB5824F83A8300D8AB93 /* TableVIewDelegate.swift */,
 				9F46BB5A24F83AD100D8AB93 /* CalendarDelegate.swift */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		9F46BB5E24FBDB7F00D8AB93 /* BirthdaysInDateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F46BB5F24FBDBA200D8AB93 /* BirthdaysInDateViewController.swift */,
+			);
+			path = BirthdaysInDateViewController;
+			sourceTree = "<group>";
+		};
+		9F46BB6124FC04C100D8AB93 /* BirthdayInDateTableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F46BB6224FC04DF00D8AB93 /* TableViewDelegate.swift */,
+			);
+			path = BirthdayInDateTableViewDelegate;
 			sourceTree = "<group>";
 		};
 		9FE1A77B23C66C13008C9BCA = {
 			isa = PBXGroup;
 			children = (
 				9FE1A78623C66C13008C9BCA /* First */,
+				9FE1A78D23C66C13008C9BCA /* Main.storyboard */,
 				9FE1A78523C66C13008C9BCA /* Products */,
 				4D1B13653D23B517341E3005 /* Pods */,
 				8234D9675B9B711D0E7704F6 /* Frameworks */,
@@ -109,11 +127,10 @@
 		9FE1A78623C66C13008C9BCA /* First */ = {
 			isa = PBXGroup;
 			children = (
-				9F46BB4F24F5B36C00D8AB93 /* Base */,
 				9FE8E1FC24CF251E00F83C72 /* AppFiles */,
+				9F46BB4F24F5B36C00D8AB93 /* Base */,
 				9FE8E1FE24CF252D00F83C72 /* Extensions */,
 				9FE8E1FF24CF254000F83C72 /* Modules */,
-				9FE1A78D23C66C13008C9BCA /* Main.storyboard */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -134,6 +151,7 @@
 		9FE8E1FE24CF252D00F83C72 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9F46BB6124FC04C100D8AB93 /* BirthdayInDateTableViewDelegate */,
 				9F46BB5724F83A7100D8AB93 /* MainViewController */,
 				9FE8E20424CF25F700F83C72 /* AddedViewControllerExtensions */,
 			);
@@ -143,6 +161,7 @@
 		9FE8E1FF24CF254000F83C72 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9F46BB5E24FBDB7F00D8AB93 /* BirthdaysInDateViewController */,
 				9FE8E20324CF259D00F83C72 /* AddedViewController */,
 				9FE8E20224CF257E00F83C72 /* MainViewController */,
 			);
@@ -288,8 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F46BB5924F83A8300D8AB93 /* TableVIewDelegate.swift in Sources */,
+				9F46BB6324FC04DF00D8AB93 /* TableViewDelegate.swift in Sources */,
 				9FE1A78C23C66C13008C9BCA /* AddedViewController.swift in Sources */,
+				9F46BB6024FBDBA200D8AB93 /* BirthdaysInDateViewController.swift in Sources */,
 				9FE1A78823C66C13008C9BCA /* AppDelegate.swift in Sources */,
 				9FE1A79223C66C13008C9BCA /* First.xcdatamodeld in Sources */,
 				9FAEAE7C24D1A4430069A666 /* TextFieldDelegate.swift in Sources */,

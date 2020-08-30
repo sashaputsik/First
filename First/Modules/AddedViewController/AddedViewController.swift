@@ -8,6 +8,7 @@ class AddedViewController: UIViewController {
     var date = Date()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         firstNameTextField.delegate = self
         lastNameTextField.delegate  = self
     }
@@ -18,7 +19,11 @@ class AddedViewController: UIViewController {
         Birthday().saveBirthaday(of: date, firstName: firstName, lastName: lastName) { (error) -> ()? in
             setAlert(of: error.localizedDescription)
         }
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != ""{
         performSegue(withIdentifier: "unwindSegueWithUnwind", sender: nil)
+        } else{
+            setAlert(of: "Empty Fields")
+        }
     }
 
     
