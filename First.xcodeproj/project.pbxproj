@@ -12,6 +12,7 @@
 		9F46BB5B24F83AD100D8AB93 /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB5A24F83AD100D8AB93 /* CalendarDelegate.swift */; };
 		9F46BB6024FBDBA200D8AB93 /* BirthdaysInDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB5F24FBDBA200D8AB93 /* BirthdaysInDateViewController.swift */; };
 		9F46BB6324FC04DF00D8AB93 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB6224FC04DF00D8AB93 /* TableViewDelegate.swift */; };
+		9F46BB6524FD42B400D8AB93 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F46BB6424FD42B400D8AB93 /* NotificationDelegate.swift */; };
 		9FAEAE7C24D1A4430069A666 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEAE7B24D1A4430069A666 /* TextFieldDelegate.swift */; };
 		9FE1A78823C66C13008C9BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1A78723C66C13008C9BCA /* AppDelegate.swift */; };
 		9FE1A78A23C66C13008C9BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1A78923C66C13008C9BCA /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		9F46BB5A24F83AD100D8AB93 /* CalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDelegate.swift; sourceTree = "<group>"; };
 		9F46BB5F24FBDBA200D8AB93 /* BirthdaysInDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysInDateViewController.swift; sourceTree = "<group>"; };
 		9F46BB6224FC04DF00D8AB93 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		9F46BB6424FD42B400D8AB93 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		9FAEAE7B24D1A4430069A666 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		9FE1A78423C66C13008C9BCA /* First.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE1A78723C66C13008C9BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				9F46BB5A24F83AD100D8AB93 /* CalendarDelegate.swift */,
+				9F46BB6424FD42B400D8AB93 /* NotificationDelegate.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				9F46BB6024FBDBA200D8AB93 /* BirthdaysInDateViewController.swift in Sources */,
 				9FE1A78823C66C13008C9BCA /* AppDelegate.swift in Sources */,
 				9FE1A79223C66C13008C9BCA /* First.xcdatamodeld in Sources */,
+				9F46BB6524FD42B400D8AB93 /* NotificationDelegate.swift in Sources */,
 				9FAEAE7C24D1A4430069A666 /* TextFieldDelegate.swift in Sources */,
 				9F46BB5B24F83AD100D8AB93 /* CalendarDelegate.swift in Sources */,
 				9FE1A79F23C66D4D008C9BCA /* MainViewController.swift in Sources */,

@@ -6,6 +6,9 @@ class AddedViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     var date = Date()
+    @IBOutlet weak var selectedTimeLabel: UILabel!
+    @IBOutlet weak var notificationTimePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,7 +19,7 @@ class AddedViewController: UIViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         guard let firstName = firstNameTextField.text else{return}
         guard let lastName = lastNameTextField.text else{return}
-        Birthday().saveBirthaday(of: date, firstName: firstName, lastName: lastName) { (error) -> ()? in
+        Birthday().saveBirthaday(of: date, notificationTime: notificationTimePicker.date, firstName: firstName, lastName: lastName) { (error) -> ()? in
             setAlert(of: error.localizedDescription)
         }
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" && lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != ""{

@@ -13,8 +13,10 @@ extension BirthdaysInDateViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.id,
                                                  for: indexPath)
         guard   let firstName = birthdaysInDate[indexPath.row].firstName,
-                let lastName = birthdaysInDate[indexPath.row].lastName else{return UITableViewCell()}
+                let lastName = birthdaysInDate[indexPath.row].lastName,
+            let notificationTime = birthdaysInDate[indexPath.row].notificationTime else{return UITableViewCell()}
         cell.textLabel?.text = firstName + " " + lastName
+        cell.detailTextLabel?.text = dateForrmater.string(from: notificationTime)
         return cell
     }
     

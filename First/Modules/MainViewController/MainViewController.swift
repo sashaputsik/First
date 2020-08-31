@@ -1,10 +1,13 @@
 import CoreData
 import FSCalendar
 import UIKit
+import UserNotifications
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var calendarView: FSCalendar!
+    let center = UNUserNotificationCenter.current()
+    
     public var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
@@ -22,6 +25,7 @@ class MainViewController: UIViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarView.select(Date())
+        center.delegate = self
     }
    
     @IBAction func unwindSegue(unwind: UIStoryboardSegue){
