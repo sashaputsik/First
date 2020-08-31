@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         Birthday().fetchBirthdayRequest()
+        calendarView.reloadData()
     }
        
     override func viewDidLoad() {

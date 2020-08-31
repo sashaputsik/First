@@ -24,7 +24,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-TA-8BF">
                                 <rect key="frame" x="20" y="67" width="345" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36F-MY-XfK">
                                 <rect key="frame" x="20" y="121" width="123" height="37"/>
@@ -35,7 +35,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWa-CV-aqV">
                                 <rect key="frame" x="20" y="168" width="345" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-jP-3Xf" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <rect key="frame" x="2" y="101" width="375" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
@@ -145,10 +145,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="leading" secondItem="0Ph-Op-VdV" secondAttribute="leading" id="9VX-Yp-RL1"/>
-                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="trailing" secondItem="0Ph-Op-VdV" secondAttribute="trailing" id="AW6-Ct-mXp"/>
-                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="bottom" secondItem="0Ph-Op-VdV" secondAttribute="bottom" id="am6-WX-goi"/>
-                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="top" secondItem="0Ph-Op-VdV" secondAttribute="top" id="nw5-VD-4SB"/>
+                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="leading" secondItem="0Ph-Op-VdV" secondAttribute="leading" constant="2" id="Ej1-K0-8t1"/>
+                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="bottom" secondItem="0Ph-Op-VdV" secondAttribute="bottom" id="KsX-vt-sk8"/>
+                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="top" secondItem="0Ph-Op-VdV" secondAttribute="top" constant="5" id="VpI-AJ-HLu"/>
+                            <constraint firstItem="Ahb-jP-3Xf" firstAttribute="trailing" secondItem="0Ph-Op-VdV" secondAttribute="trailing" constant="2" id="zd5-Gf-ovv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Ph-Op-VdV"/>
                     </view>

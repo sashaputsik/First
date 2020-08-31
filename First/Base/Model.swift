@@ -38,23 +38,30 @@ class Birthday{
             errorCompletionHandler(error)
         }
     }
-    func removeBirthday(indexPath: IndexPath, tableView: UITableView){
-        let birthday = birthdays[indexPath.row]
+    func removeBirthday(lastName: String, indexPath: IndexPath, tableView: UITableView){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        context.delete(birthday)
-        birthdays.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
-        if let id = birthday.birthdayId{
-          let center = UNUserNotificationCenter.current()
-          center.removePendingNotificationRequests(withIdentifiers: [id])
+        var i = -1
+        for birthday in birthdays{
+            i += 1
+            if lastName == birthday.lastName {
+                context.delete(birthday)
+                birthdays.remove(at: i)
+                
+                if let id = birthday.birthdayId{
+                    let center = UNUserNotificationCenter.current()
+                    center.removePendingNotificationRequests(withIdentifiers: [id])
+                }
+            }
         }
         do {
-          try context.save()
+            try context.save()
+            
         } catch let error as NSError {
-          print(error)
+            print(error)
         }
     }
+    
     func fetchBirthdayRequest(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -62,9 +69,9 @@ class Birthday{
         let fetch = BirthdayCore.fetchRequest() as NSFetchRequest<BirthdayCore>
         fetch.sortDescriptors = [sort]
         do {
-          birthdays = try context.fetch(fetch)
+            birthdays = try context.fetch(fetch)
         } catch let error as NSError {
-          print(error)
+            print(error)
         }
     }
 }
